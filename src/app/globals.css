@@ -1,0 +1,211 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-space-mono), ui-monospace, monospace;
+
+  /* CapGen font CSS variables (mapped to Google Fonts loaded via <link>) */
+  --font-inter: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
+  --font-poppins: "Poppins", sans-serif;
+  --font-anton: "Anton", sans-serif;
+  --font-bebas-neue: "Bebas Neue", sans-serif;
+  --font-oswald: "Oswald", sans-serif;
+  --font-bangers: "Bangers", cursive;
+  --font-kanit: "Kanit", sans-serif;
+  --font-archivo-black: "Archivo Black", sans-serif;
+  --font-russo-one: "Russo One", sans-serif;
+  --font-teko: "Teko", sans-serif;
+  --font-luckiest-guy: "Luckiest Guy", cursive;
+  --font-playfair-display: "Playfair Display", serif;
+  --font-space-mono: "Space Mono", monospace;
+  --font-rubik: "Rubik", sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.75rem;
+  /* CapGen brand — dark (black bg, white text, orange accent) */
+  --background: #0a0a0a;
+  --foreground: #ffffff;
+  --card: #141414;
+  --card-foreground: #ffffff;
+  --popover: #141414;
+  --popover-foreground: #ffffff;
+  --primary: #FF6B1A;
+  --primary-foreground: #ffffff;
+  --secondary: #1a1a1a;
+  --secondary-foreground: #ffffff;
+  --muted: #1a1a1a;
+  --muted-foreground: #a0a0a0;
+  --accent: #2a1a0d;
+  --accent-foreground: #ffffff;
+  --destructive: #e5484d;
+  --border: #2a2a2a;
+  --input: #2a2a2a;
+  --ring: #FF6B1A;
+  --chart-1: #FF6B1A;
+  --chart-2: #FFB27A;
+  --chart-3: #2a1a0d;
+  --chart-4: #ffffff;
+  --chart-5: #a0a0a0;
+  --sidebar: #0d0d0d;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #FF6B1A;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #1a1a1a;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #2a2a2a;
+  --sidebar-ring: #FF6B1A;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+  --card: oklch(0.205 0 0);
+  --card-foreground: oklch(0.985 0 0);
+  --popover: oklch(0.205 0 0);
+  --popover-foreground: oklch(0.985 0 0);
+  --primary: #FF6B1A;
+  --primary-foreground: #ffffff;
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: #FF6B1A;
+  --chart-1: #FF6B1A;
+  --chart-2: #FFB27A;
+  --chart-3: #FFE8D6;
+  --chart-4: oklch(0.985 0 0);
+  --chart-5: oklch(0.708 0 0);
+  --sidebar: oklch(0.205 0 0);
+  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-primary: #FF6B1A;
+  --sidebar-primary-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.269 0 0);
+  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-border: oklch(1 0 0 / 10%);
+  --sidebar-ring: #FF6B1A;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  }
+}
+
+/* CapGen custom utilities */
+.capgen-gradient-text {
+  background: linear-gradient(135deg, #FF6B1A 0%, #FF9248 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.capgen-orange-glow {
+  box-shadow: 0 0 60px -10px rgba(255, 107, 26, 0.35);
+}
+
+.capgen-grid-bg {
+  background-image:
+    linear-gradient(rgba(255, 107, 26, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 107, 26, 0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.capgen-radial-orange {
+  background: radial-gradient(circle at 50% 0%, rgba(255, 107, 26, 0.12) 0%, transparent 60%);
+}
+
+/* Custom scrollbar for caption editor */
+.capgen-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.capgen-scroll::-webkit-scrollbar-track {
+  background: #1a1a1a;
+  border-radius: 8px;
+}
+.capgen-scroll::-webkit-scrollbar-thumb {
+  background: #FFB27A;
+  border-radius: 8px;
+}
+.capgen-scroll::-webkit-scrollbar-thumb:hover {
+  background: #FF6B1A;
+}
+
+/* Caption preview animations */
+@keyframes capgen-pulse-word {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+.capgen-active-word {
+  animation: capgen-pulse-word 0.35s ease-in-out;
+}
+
+/* Range input styling for color pickers */
+input[type="color"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  cursor: pointer;
+  background: transparent;
+}
+input[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+input[type="color"]::-webkit-color-swatch {
+  border: 2px solid #2a2a2a;
+  border-radius: 8px;
+}
+input[type="color"]::-moz-color-swatch {
+  border: 2px solid #2a2a2a;
+  border-radius: 8px;
+}
